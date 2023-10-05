@@ -2,6 +2,7 @@ import { useState } from 'react';
 import BingoCard from './BingoCard';
 import PHRASES from './Phrases';
 import SplashScreen from './SplashScreen';
+import { Button, Container } from 'react-bootstrap';
 
 const generateBingoPhrases = () => {
     // Create a shuffled copy of the phrases
@@ -29,16 +30,26 @@ const BingoGenerator = () => {
 
     const handleCloseSplash = () => {
         setIsWin(false);
+        setBingoPhrases(generateBingoPhrases());
     };
 
     return (
-        <div>
-            <BingoCard phrases={bingoPhrases} onWin={handleWin} />
-            <button onClick={() => setBingoPhrases(generateBingoPhrases())}>
+        <Container className="text-center my-5">
+            <BingoCard
+                key={JSON.stringify(bingoPhrases)}
+                phrases={bingoPhrases}
+                onWin={handleWin}
+            />
+            <Button
+                className="mt-3"
+                variant="dark" // Change variant for aesthetics
+                size="lg" // Increase button size
+                onClick={() => setBingoPhrases(generateBingoPhrases())}
+            >
                 Generate New Card
-            </button>
+            </Button>
             <SplashScreen show={isWin} onClose={handleCloseSplash} />
-        </div>
+        </Container>
     );
 };
 

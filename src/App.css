@@ -2,24 +2,7 @@
   text-align: center;
 }
 
-.bingo-card {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 5px;
-}
-
-.bingo-cell {
-  padding: 20px;
-  border: 1px solid black;
-  cursor: pointer;
-  font-size: 0.8rem; /* Adjust as needed */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.bingo-cell.selected {
-  background-color: yellow;
+body {
+  background-color: #f7f8fa;  /* light gray background for contrast */
+  font-family: 'Arial', sans-serif;
 }

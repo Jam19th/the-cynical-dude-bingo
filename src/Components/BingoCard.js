@@ -1,6 +1,6 @@
 import { useState } from 'react';
-
 import BingoCell from './BingoCell';
+import { Row, Col } from 'react-bootstrap';
 
 // Utility function to check for Bingo
 function checkBingo(card) {
@@ -45,21 +45,24 @@ const BingoCard = ({ phrases, onWin }) => {
     };
 
     return (
-        <div className="bingo-card">
+        <div className="p-3">
             {cardState.map((row, rIndex) => (
-                <div className="bingo-row" key={rIndex}>
+                <Row key={rIndex} className="g-0 mb-2">
                     {row.map((cell, cIndex) => (
-                        <BingoCell
-                            key={cIndex}
-                            value={cell.value}
-                            selected={cell.selected}
-                            onClick={() => handleCellClick(rIndex, cIndex)}
-                        />
+                        // Add horizontal margin to the Col component
+                        <Col xs={2} style={{ margin: '0 5px' }} key={cIndex}>
+                            <BingoCell
+                                value={cell.value}
+                                selected={cell.selected}
+                                onClick={() => handleCellClick(rIndex, cIndex)}
+                            />
+                        </Col>
                     ))}
-                </div>
+                </Row>
             ))}
         </div>
     );
+
 };
 
 export default BingoCard;
