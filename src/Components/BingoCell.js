@@ -11,7 +11,8 @@ const BingoCell = ({ value, selected, onClick }) => {
         justifyContent: 'center',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
-        borderRadius: '0',
+        borderRadius: '15px',
+        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
         backgroundColor: selected ? '#ffc107' : '#fff',
         color: selected ? 'black' : undefined,
     };

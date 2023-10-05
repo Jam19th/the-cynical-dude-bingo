@@ -1,12 +1,14 @@
 import BingoGenerator from './Components/BingoGenerator';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container, Row, Col } from 'react-bootstrap';
+import { Helmet } from "react-helmet-async";
 
 function App() {
   return (
     <Container fluid className="App py-5"> {/* Use Bootstrap's Container with some padding */}
+      <Helmet titleTemplate="%s | What I Eat in a Day as a Fat Person" defaultTitle="What I Eat in a Day as a Fat Person" />
       <Row>
-      <Col xs={12} md={{ span: 10, offset: 1 }}>
+        <Col xs={12} md={{ span: 10, offset: 1 }}>
           <Container className="bg-transparent p-0 mb-4">
             <Container className="bg-transparent p-0 mb-4">
               <h1 className="text-center display-4">
